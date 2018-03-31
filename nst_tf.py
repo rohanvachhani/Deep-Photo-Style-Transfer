@@ -36,7 +36,7 @@ def layer_style_cost(a_S, a_G):
     a_S = tf.transpose(tf.reshape(a_S, [-1,n_C]))
     a_G = tf.transpose(tf.reshape(a_G, [-1,n_C]))
     
-    GS = gram_matrix(a_S)
+    GS = gram_matrix(a_S)  
     GG = gram_matrix(a_G)
     
     J_style_layer = tf.reduce_sum(tf.square(tf.subtract(GS,GG)))/np.square(2*n_H*n_W)
